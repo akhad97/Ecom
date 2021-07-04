@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<style media="screen">
+
+  </style>
+ <center>
+  <h3 class='alert alert-success'>Send Us Your Valuable Feedback !</h3>
+
+  <form method="POST">
+    <!-- Very Important csrf Token -->
+    {% csrf_token %}
+    <div class="form-group" style="width: 800px;">
+      <p>
+      <h3>{{ form | crispy }}</h3>
+      </p>
+      <br>
+      <input type="submit" value="Send Message" class='btn btn-primary btn-lg'>
+    </div>
+  </form>
+</center>
+<br><br><br><br><br><br><br>
+{% endblock %}
